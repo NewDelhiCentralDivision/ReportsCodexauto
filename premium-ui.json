@@ -1,0 +1,7 @@
+{
+  "profile": "static-report",
+  "sourceRoots": ["."],
+  "ownership": {
+    "Select/Listbox": "native"
+  }
+}

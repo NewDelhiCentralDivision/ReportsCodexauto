@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#18243a" />
+  <title>India Post Pulse — New Delhi Central</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#head-offices">Skip to Head Office performance</a>
+  <aside class="rail" aria-label="Dashboard navigation">
+    <a class="brand" href="#overview"><span class="brand-seal" aria-hidden="true"><i></i><i></i><i></i></span><span><b>India Post</b><small>Pulse</small></span></a>
+    <nav><a href="#overview" class="active">Overview</a><a href="#products">Product revenue</a><a href="#digital">Digital performance</a><a href="#head-offices">Head offices</a><a href="#all-offices">All offices</a></nav>
+    <p class="rail-note"><b>New Delhi Central</b><span>Booking intelligence</span></p>
+  </aside>
+  <main>
+    <header class="masthead">
+      <p><span>India Post</span><i>/</i> New Delhi Central Division</p>
+      <button class="export" type="button" data-action="export" onclick="reportAction(this)">↓ Export current view</button>
+    </header>
+
+    <section class="hero" id="overview" aria-labelledby="hero-title">
+      <div class="route-art" aria-hidden="true"><i class="orbit a"></i><i class="orbit b"></i><i class="parcel p1"></i><i class="parcel p2"></i></div>
+      <div class="hero-intro"><p class="kicker"><span></span> Daily performance dashboard</p><h1 id="hero-title">The division’s<br><em>booking pulse.</em></h1><p>Booking, product earning, and payment performance for New Delhi Central — designed for quick decisions on a phone or at a desk.</p><div class="hero-meta"><span>New Delhi Central Division</span><i></i><span>03 September 2026 extract</span></div></div>
+      <div class="hero-kpis" aria-label="Consolidated key performance indicators">
+        <article><p>Total revenue</p><strong id="revenue-total">—</strong><small id="revenue-note">booking revenue plus EMO commission</small></article>
+        <article><p>Articles / transactions</p><strong id="article-total">—</strong><small>all available products</small></article>
+        <article><p>Office records represented</p><strong id="office-total">—</strong><small>55 booking offices + 2 EMO-only records</small></article>
+      </div>
+      <div class="hero-mix"><div class="hero-ring" id="hero-ring"><div><b id="digital-value-pct">—</b><span>digital<br>collection</span></div></div><p><span class="dot blue"></span><b id="digital-value">—</b> digital value</p><p><span class="dot orange"></span><b id="cash-value">—</b> cash value</p><small>Cash + digital payment value</small></div>
+    </section>
+
+    <section class="quick-signals" aria-label="Data-derived performance insights">
+      <article><span>₹</span><div><p>Revenue leader</p><strong id="revenue-leader">Loading</strong><small id="revenue-leader-detail">—</small></div></article>
+      <article><span>↗</span><div><p>Booking leader</p><strong id="article-leader">Loading</strong><small id="article-leader-detail">—</small></div></article>
+      <article class="digital-signal"><span>◎</span><div><p>Digital champion</p><strong id="digital-leader">Loading</strong><small id="digital-leader-detail">—</small></div></article>
+    </section>
+
+    <section class="section-heading" id="digital"><div><p class="kicker dark"><span></span> Payment posture</p><h2>Digital adoption, in clear view</h2></div><p>Digital performance is based on transaction counts, while the division ring shows the cash / digital collection value split.</p></section>
+    <section class="digital-grid">
+      <article class="split-card"><div class="card-heading"><div><span>01</span><h3>Digital versus cash</h3></div><button type="button" data-action="mix-info" onclick="reportAction(this)" aria-label="Explain the payment calculations">i</button></div><div class="split-main"><div class="value-ring" id="transaction-ring"><b id="digital-txn-pct">—</b><small>digital<br>transactions</small></div><div class="transaction-stat"><p>Digital transactions</p><strong id="digital-count">—</strong><small id="digital-count-detail">—</small><p>Cash transactions</p><strong id="cash-count">—</strong><small id="cash-count-detail">—</small></div></div><div class="value-bar"><i id="digital-bar"></i></div><div class="split-caption"><span><b id="cash-value-pct">—</b> cash collection share</span><span>Value basis</span></div></article>
+      <article class="champion-card"><div class="card-heading"><div><span>02</span><h3>Digital champions</h3></div><small>Share + volume</small></div><p class="card-copy">High digital shares are celebrated with their eligible transaction volume shown alongside.</p><div id="champion-list" class="champion-list"></div></article>
+    </section>
+
+    <section class="section-heading" id="products"><div><p class="kicker dark"><span></span> Product revenue</p><h2>Which services earn the most today?</h2></div><p>Every booking product is shown with its article count and collected revenue. EMO contributes commission only.</p></section>
+    <section class="product-section">
+      <article class="product-highlight"><p class="kicker"><span></span> Top earning product</p><strong id="top-product-name">Loading</strong><div><b id="top-product-revenue">—</b><span id="top-product-share">—</span></div><p id="top-product-detail">—</p></article>
+      <div><div class="product-list" id="product-list" aria-label="Revenue by product and service"></div><button class="view-products" id="view-products" type="button" data-action="products" onclick="reportAction(this)" aria-expanded="false">View all products <span>↓</span></button></div>
+    </section>
+
+    <section class="section-heading" id="head-offices"><div><p class="kicker dark"><span></span> Head Office performance</p><h2>One division, three operating clusters</h2></div><p>Every office is assigned using the authoritative Head Office mapping supplied with this report.</p></section>
+    <section class="hpo-summary" id="hpo-summary" aria-label="Head Office performance summary"></section>
+
+    <section class="office-section" id="all-offices" aria-labelledby="offices-title">
+      <div class="office-head"><div><p class="kicker dark"><span></span> All offices</p><h2 id="offices-title">Office performance by Head Office</h2><p id="office-status" role="status">Preparing grouped office performance</p></div><label class="search"><span aria-hidden="true">⌕</span><span class="visually-hidden">Search offices</span><input id="office-search" type="search" placeholder="Search office or ID" autocomplete="off"><button type="button" data-action="clear-search" onclick="reportAction(this)" hidden aria-label="Clear office search">×</button></label></div>
+      <div class="sort-row"><span>Order offices by</span><button type="button" data-action="sort" data-key="revenue" onclick="reportAction(this)" class="active">Revenue <i>↓</i></button><button type="button" data-action="sort" data-key="articles" onclick="reportAction(this)">Articles <i>↕</i></button><button type="button" data-action="sort" data-key="digitalTxnPct" onclick="reportAction(this)">Digital % <i>↕</i></button></div>
+      <div id="office-groups" class="office-groups"></div>
+      <div id="empty-state" class="empty" hidden><b>No offices match that search.</b><span>Clear the search to return to all reporting office records.</span></div>
+    </section>
+  </main>
+  <nav class="mobile-nav" aria-label="Mobile dashboard navigation"><a href="#overview">Overview</a><a href="#products">Products</a><a href="#digital">Digital</a><a href="#head-offices">HPO</a><a href="#all-offices">Offices</a></nav>
+  <dialog id="office-dialog" aria-labelledby="office-dialog-title"><button type="button" class="close" data-action="close-office" onclick="reportAction(this)" aria-label="Close office detail">×</button><div id="office-dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
