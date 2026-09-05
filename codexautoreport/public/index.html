@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#173b75">
+  <title>Daily Performance Report — New Delhi Central Division</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="wordmark" href="#overview" aria-label="New Delhi Central Division report home"><span>NDCD</span><strong>Daily reports</strong></a>
+    <nav class="section-nav" aria-label="Report sections">
+      <a href="#overview">Overview</a><a href="#products">Products</a><a href="#head-offices">Head Offices</a><a href="#offices">Offices</a>
+    </nav>
+    <div class="report-stamp"><span class="online-dot" aria-hidden="true"></span><span id="header-date">Latest report</span></div>
+  </header>
+
+  <main class="dashboard">
+    <section class="report-section overview-section reveal" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">New Delhi Central Division</p><h1 id="overview-title">Consolidated Report</h1><p class="section-copy">Daily booking and collection performance, reconciled from the current report files.</p></div>
+        <div class="date-chip" id="report-date">Report date —</div>
+      </div>
+
+      <div class="kpi-grid" aria-label="Division performance indicators">
+        <article class="kpi-card kpi-blue"><div class="kpi-icon" aria-hidden="true">⌁</div><p>Articles Booked</p><strong data-count="articles">—</strong><span id="articles-support">Across all reported services</span><svg class="sparkline" viewBox="0 0 114 30" aria-hidden="true"><path id="articles-spark"></path></svg></article>
+        <article class="kpi-card kpi-indigo"><div class="kpi-icon" aria-hidden="true">₹</div><p>Revenue Collected</p><strong data-count="revenue">—</strong><span id="revenue-support">Current report value</span><svg class="sparkline" viewBox="0 0 114 30" aria-hidden="true"><path id="revenue-spark"></path></svg></article>
+        <article class="kpi-card kpi-teal"><div class="kpi-icon" aria-hidden="true">↗</div><p>Digital Transactions</p><strong data-count="digital">—</strong><span id="digital-support">Of booking payment records</span><svg class="sparkline" viewBox="0 0 114 30" aria-hidden="true"><path id="digital-spark"></path></svg></article>
+        <article class="kpi-card kpi-amber"><div class="kpi-icon" aria-hidden="true">⌂</div><p>Offices with Booking</p><strong data-count="offices">—</strong><span id="offices-support">Booking participation</span><div class="micro-progress" aria-hidden="true"><i id="office-progress"></i></div></article>
+      </div>
+
+      <div class="overview-grid">
+        <article class="analytics-card revenue-card"><div class="card-heading"><div><p>Collection analysis</p><h2>Revenue by service</h2></div><span class="soft-badge">Current report</span></div><div class="revenue-chart" id="revenue-chart" aria-label="Revenue by service chart"></div><p class="chart-foot">Bars show each product’s share of total collected revenue.</p></article>
+        <article class="analytics-card digital-card"><div class="card-heading"><div><p>Payment mix</p><h2>Digital transaction share</h2></div><span class="more" aria-hidden="true">•••</span></div><div class="radial-wrap"><div class="radial" id="digital-radial"><span id="digital-percent">—</span><small>digital</small></div><div class="radial-copy"><strong id="digital-detail">—</strong><span>digital transactions</span><div class="key"><i class="key-digital"></i>Digital <b id="digital-key">—</b></div><div class="key"><i class="key-cash"></i>Cash <b id="cash-key">—</b></div></div></div></article>
+        <article class="analytics-card hpo-visual-card"><div class="card-heading"><div><p>Organisation view</p><h2>Head Office contribution</h2></div><span class="more" aria-hidden="true">•••</span></div><div id="hpo-mini-chart" class="hpo-mini-chart" aria-label="Revenue contribution by Head Office"></div></article>
+      </div>
+    </section>
+
+    <section class="report-section reveal" id="products" aria-labelledby="products-title">
+      <div class="section-heading compact"><div><p class="eyebrow">Service mix</p><h2 id="products-title">Product-wise Consolidated Report</h2></div><p class="section-copy">Articles, revenue, and live revenue share for every reported product.</p></div>
+      <div class="table-card"><div class="table-scroll"><table class="report-table product-table"><caption class="visually-hidden">Product-wise consolidated report</caption><thead><tr><th scope="col">Product name</th><th scope="col" class="numeric">Articles booked</th><th scope="col" class="numeric">Revenue collected</th><th scope="col">Revenue share</th></tr></thead><tbody id="product-body"></tbody><tfoot><tr><th scope="row">TOTAL</th><td class="numeric" id="product-total-articles">—</td><td class="numeric" id="product-total-revenue">—</td><td id="product-total-share">100%</td></tr></tfoot></table></div></div>
+    </section>
+
+    <section class="report-section reveal" id="head-offices" aria-labelledby="head-offices-title">
+      <div class="section-heading compact"><div><p class="eyebrow">Comparative performance</p><h2 id="head-offices-title">Performance of All 3 Head Offices</h2></div><p class="section-copy">The same booking, revenue, and payment measures — compared side by side.</p></div>
+      <div class="hpo-card-grid" id="hpo-cards" aria-live="polite"></div>
+    </section>
+
+    <section class="report-section reveal" id="offices" aria-labelledby="offices-title">
+      <div class="section-heading compact"><div><p class="eyebrow">Office directory</p><h2 id="offices-title">Performance of All Offices</h2></div><p class="section-copy" id="office-status" role="status">Loading office performance.</p></div>
+      <div class="directory-toolbar">
+        <label class="search-control"><span aria-hidden="true">⌕</span><input id="office-search" type="search" placeholder="Search office or ID" autocomplete="off" aria-label="Search offices"><button id="clear-search" type="button" aria-label="Clear office search" hidden>×</button></label>
+        <label class="select-control"><span>Head Office</span><select id="hpo-filter" aria-label="Filter by Head Office"><option value="">All Head Offices</option></select></label>
+        <label class="select-control"><span>Rows</span><select id="page-size" aria-label="Office rows per page"><option value="10">10 rows</option><option value="20">20 rows</option><option value="55">All rows</option></select></label>
+      </div>
+      <div class="table-card office-table-card"><div class="table-scroll"><table class="report-table office-table"><caption class="visually-hidden">Office performance. Select a column heading to sort.</caption><thead><tr><th scope="col"><button type="button" data-sort="office">Office name <i>↕</i></button></th><th scope="col"><button type="button" data-sort="headOffice">Head Office <i>↕</i></button></th><th scope="col" class="numeric"><button type="button" data-sort="articles">Articles <i>↕</i></button></th><th scope="col" class="numeric"><button type="button" data-sort="revenue">Revenue <i>↕</i></button></th><th scope="col" class="numeric"><button type="button" data-sort="digitalCount">Digital Txns <i>↕</i></button></th><th scope="col" class="numeric"><button type="button" data-sort="digitalTxnPct">Digital % <i>↕</i></button></th><th scope="col" class="numeric">DQR Scan</th><th scope="col" class="numeric">SBIPOS Card</th><th scope="col" class="numeric">SBIPOS BharatQR</th><th scope="col" class="numeric">SBIEPAY BharatQR</th><th scope="col" class="numeric">SBIEPAY UPI</th><th scope="col" class="numeric">SBIEPAY Debit Card</th></tr></thead><tbody id="office-body"></tbody></table></div><div class="table-footer"><span id="range-status">—</span><div class="pagination"><button id="previous-page" type="button" aria-label="Previous page">←</button><span id="page-status">—</span><button id="next-page" type="button" aria-label="Next page">→</button></div></div></div>
+    </section>
+  </main>
+  <footer class="report-footer"><strong>New Delhi Central Division</strong><span>Daily Performance Report</span><span id="footer-date">Date: —</span></footer>
+  <div class="data-tooltip" id="data-tooltip" role="tooltip" hidden></div>
+  <div id="load-error" class="load-error" role="alert" hidden>Report data could not be loaded. Refresh the page and try again.</div>
+  <script src="app.js"></script>
+</body>
+</html>
